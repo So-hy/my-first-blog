@@ -10,6 +10,7 @@ from .serializers import PostSerializer
 class BlogImage(viewsets.ModelViewSet): 
     queryset = Post.objects.all() 
     serializer_class = PostSerializer
+    
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
